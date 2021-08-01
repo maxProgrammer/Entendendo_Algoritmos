@@ -1,43 +1,33 @@
-#função que identifica o menor item de uma lista e retorna sua posicao
-def encontraMenor(lista):
-    #armazena o valor do indice 0 a variavel
-    menorValor = lista[0]
+#definicao da funcao
+def pesquisabinaria(lista, item):
+    #inicia posicao inicial como indice zero
+    menor  = 0
+    #inicia posicao final como final da lista
+    maior = len(lista) -1
 
-    #considera que index zero tem o menor valor
-    menorIndex = 0
+    #procura item enquanto não chegar no final da lista
+    while menor <= maior:
+        #encontra o meio da lista
+        meio = (menor + maior) // 2
+        #armazena o valor do meio da lista na variavel
+        palpite = lista[meio]
 
-    #percorre lista do indice 1 ao ultimo
-    for i in range(1,len(lista) - 1):
+        #se item esta no meio da lista e retorna a posicao que o programa esta inserido
+        if palpite == item:
+            return "{} está na posicao {}.".format(item,meio)
+            break
+        #se meio da lista e maior do que item informado posicao final da lista será o meio atual - 1
+        elif palpite > item:
+            maior = meio - 1
+        # se meio da lista e menor do que item informado inicio sera meio da lista mais + 1
+        else:
+            menor = meio + 1
+    #se numero nao é encontrado retorna que o item não está na lista
+    return "{} não está na lista.".format(item)
 
-        #compra se lista[i] é menor que menor valor e
-        #se verdadeiro atualiza menorValor e menorIndex
-        if lista[i] < menorValor:
-            menorValor = lista[i]
-            menorIndex = i
+#testa o programa
+lista = [1,3,5,7,9]
+print(pesquisabinaria(lista,7))
+print(pesquisabinaria(lista,-4))
 
-    #retorna o index do menor valor encontrado
-    return menorIndex
-
-#funcao que utiliza a funcaencontra menor
-#para gerar outra lista ordenada
-def ordenaSelecao(lista):
-
-    #lista que receberá itens ordenados
-    ordLista = []
-
-    #percorre todos elementos da lista
-    for x in range(len(lista)):
-
-        # a cada iteracao encontra menor item e o insere
-        # na nova lista. Funcao pop armazena o item na nova lista
-        # e apaga na antiga ao mesmo tempo.
-        menor = encontraMenor(lista)
-        ordLista.append(lista.pop(menor))
-
-    #retorna nova lista ordenada
-    return ordLista
-
-#teste programa    
-lista = [3,1,13,5,0,100]
-print(ordenaSelecao(lista))
-    
+                
