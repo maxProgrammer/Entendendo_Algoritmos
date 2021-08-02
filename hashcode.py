@@ -1,3 +1,5 @@
+#algoritmo utilizado pesquisar, evitar lançamentos duplicados e aplicação de cache para melhorar tempo de carregamento da página.
+# 
 voted = {}
 def verifica_eleitor(nome):
     #funcao get retorna valor do dicionario
