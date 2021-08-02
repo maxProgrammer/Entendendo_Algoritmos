@@ -1,4 +1,5 @@
-#função que identifica o menor item de uma lista e retorna sua posicao
+#algoritmo utilizado para ordenação de uma lista.
+#a cada execução ele percorre toda lista e coloca o menor na posição (n-1)
 def encontraMenor(lista):
     #armazena o valor do indice 0 a variavel
     menorValor = lista[0]

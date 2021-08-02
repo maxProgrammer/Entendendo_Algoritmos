@@ -1,3 +1,7 @@
+#algoritmo de ordenação que utilizada a técnica dividir para consquistar.
+#quebra o problema em pequenos problemas.
+#escolher um pivo e coloca os  menos a esquerda e os maiores a direita
+#execute o quicksort recursivamente nos subarrays da esquerda(menores) e direita(maiores)
 def quicksort(array):
     #caso base
     if len(array) < 2:

@@ -1,4 +1,6 @@
-#definicao da funcao
+#algoritmo  utilizado para pesquisa em uma lista ordenada.
+#sua principal vantagem sobre a pesquisa linear é o tempo de execução logaritmo.
+#utilizado muito para pesquisa de usuários
 def pesquisabinaria(lista, item):
     #inicia posicao inicial como indice zero
     menor  = 0
