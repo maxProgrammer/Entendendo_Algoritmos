@@ -1,3 +1,5 @@
+#algoritmo utilizado em grafos para identificar caminhos possíveis entre o ponto A e B,
+#como também qual o caminho mais curto.
 from collections import deque
 
 def pessoa_e_vendedor(nome):
